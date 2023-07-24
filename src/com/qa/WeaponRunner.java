@@ -1,4 +1,6 @@
-package com.qa.classes;
+package com.qa;
+
+import com.qa.classes.Weapon;
 
 public class WeaponRunner {
 
@@ -43,6 +45,14 @@ public class WeaponRunner {
         System.out.println(w2.getDurability());
         System.out.println(w2.getDamageType());
         System.out.println(w2.isBroken());
+
+        Weapon w3 = new Weapon("Duskblade of Draktharr", 60, true, 50);
+        System.out.println(w3);
+
+        System.out.println(Weapon.isPeacefulMode());
+        System.out.println(Weapon.togglePeacefulMode());
+        System.out.println(Weapon.togglePeacefulMode());
+
 
     }
 

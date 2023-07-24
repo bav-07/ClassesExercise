@@ -10,6 +10,7 @@ public class Weapon {
     private int durability;
     private String damageType;
     private boolean isBroken = false;
+    private static boolean peacefulMode = false;
 
     public Weapon(String name, int damageOutput, int price, boolean isOneHanded, boolean singleOperator, int durability, String damageType) {
         super();
@@ -20,6 +21,10 @@ public class Weapon {
         this.singleOperator = singleOperator;
         this.durability = durability;
         this.damageType = damageType;
+    }
+
+    public Weapon(String name, int damageOutput, boolean isOneHanded, int durability){
+        this(name, damageOutput, 0, true, isOneHanded, durability, "Normal");
     }
 
     public Weapon() {
@@ -40,6 +45,10 @@ public class Weapon {
             return this.damageOutput;
         }
         return 0;
+    }
+
+    public static boolean togglePeacefulMode() {
+        return peacefulMode = !peacefulMode;
     }
 
     public String getName() {
@@ -106,4 +115,25 @@ public class Weapon {
         isBroken = broken;
     }
 
+    public static boolean isPeacefulMode() {
+        return peacefulMode;
+    }
+
+    public static void setPeacefulMode(boolean peacefulMode) {
+        Weapon.peacefulMode = peacefulMode;
+    }
+
+    @Override
+    public String toString() {
+        return "Weapon{" +
+                "name='" + name + '\'' +
+                ", damageOutput=" + damageOutput +
+                ", price=" + price +
+                ", isOneHanded=" + isOneHanded +
+                ", singleOperator=" + singleOperator +
+                ", durability=" + durability +
+                ", damageType='" + damageType + '\'' +
+                ", isBroken=" + isBroken +
+                '}';
+    }
 }

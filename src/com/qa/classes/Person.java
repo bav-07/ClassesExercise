@@ -3,27 +3,32 @@ package com.qa.classes;
 public class Person {
 
     // instance variables
+    private static String latinName = "Homo Sapien";
+
     private String name;
 
     private int age;
 
-    private String hairColour;
+    // If you have a final variable, set it in the constructor
+    // If this is supposed to be constant for all instances in the class, it should be static and set here
+    private final String naturalHairColour;
 
     private String job;
 
     // Constructor: Method used to generate instances of a class (object)
     // constructors don't have a return type, and the name MUST match the class name
-    public Person(String name, int age, String hairColour, String job) {
+    public Person(String name, int age, String naturalHairColour, String job) {
         super();
         this.setName(name);
         this.setAge(age);
-        this.setHairColour(hairColour);
+        this.naturalHairColour = naturalHairColour;
         this.setJob(job);
     }
 
     // default constructor - provided by Java if you don't create your own
     public Person() {
         super();
+        this.naturalHairColour = "";
     }
     // overloaded my constructor, so I can create a blank person or a full one
     // this is Polymorphism, one of the many types of it
@@ -31,12 +36,12 @@ public class Person {
 
     // Constructor Chaining
     // this means using another constructor within your constructor
-    public Person(String name, String hairColour, String job) {
-        this(name, 0, hairColour, job); // calls another constructor to save on repeating logic
+    public Person(String name, String naturalHairColour, String job) {
+        this(name, 0, naturalHairColour, job); // calls another constructor to save on repeating logic
     }
 
     public void intro() {
-        System.out.println("Hello my name is " + name + " and I am " + age + " years old " + job + " with " + hairColour + " hair.");
+        System.out.println("Hello my name is " + name + " and I am " + age + " years old " + job + " with " + naturalHairColour + " hair.");
     }
 
     // command + n to generate al getters and setters
@@ -60,13 +65,13 @@ public class Person {
         this.age = age;
     }
 
-    public String getHairColour() {
-        return hairColour;
+    public String getNaturalHairColour() {
+        return naturalHairColour;
     }
 
-    public void setHairColour(String hairColour) {
-        this.hairColour = hairColour;
-    }
+//    public void setNaturalHairColour(String naturalHairColour) {
+//        this.naturalHairColour = naturalHairColour;
+//    }
 
     public String getJob() {
         return job;
@@ -76,5 +81,23 @@ public class Person {
         this.job = job;
     }
 
+    // this isn't really needed
+    public static String getLatinName() {
+        return latinName;
+    }
 
+    public static void setLatinName(String newLatinName){
+        latinName = newLatinName;
+    }
+
+    // lets you print the object using sout
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", naturalHairColour='" + naturalHairColour + '\'' +
+                ", job='" + job + '\'' +
+                '}';
+    }
 }
