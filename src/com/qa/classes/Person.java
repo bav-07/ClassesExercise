@@ -1,5 +1,10 @@
 package com.qa.classes;
 
+import com.qa.oop.Animal;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Person {
 
     // instance variables
@@ -14,6 +19,8 @@ public class Person {
     private final String naturalHairColour;
 
     private String job;
+
+    private List<Animal> pets = new ArrayList<>();
 
     // Constructor: Method used to generate instances of a class (object)
     // constructors don't have a return type, and the name MUST match the class name
@@ -42,6 +49,10 @@ public class Person {
 
     public void intro() {
         System.out.println("Hello my name is " + name + " and I am " + age + " years old " + job + " with " + naturalHairColour + " hair.");
+    }
+
+    public boolean addPet(Animal pet) {
+        return this.pets.add(pet);
     }
 
     // command + n to generate al getters and setters
@@ -90,14 +101,17 @@ public class Person {
         latinName = newLatinName;
     }
 
+    public List<Animal> getPets() {
+        return pets;
+    }
+
+    public void setPets(List<Animal> pets) {
+        this.pets = pets;
+    }
+
     // lets you print the object using sout
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", naturalHairColour='" + naturalHairColour + '\'' +
-                ", job='" + job + '\'' +
-                '}';
+        return "Hello my name is " + name + " and I am " + age + " years old " + job + " with " + naturalHairColour + " hair.";
     }
 }

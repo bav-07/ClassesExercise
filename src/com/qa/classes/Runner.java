@@ -1,4 +1,4 @@
-package com.qa;
+package com.qa.classes;
 
 import com.qa.classes.Person;
 

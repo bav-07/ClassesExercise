@@ -1,4 +1,4 @@
-package com.qa.classes;
+package com.qa.weapons;
 
 public class Weapon {
 

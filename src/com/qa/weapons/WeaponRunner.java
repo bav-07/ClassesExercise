@@ -1,6 +1,6 @@
-package com.qa;
+package com.qa.weapons;
 
-import com.qa.classes.Weapon;
+import com.qa.weapons.Weapon;
 
 public class WeaponRunner {
 
@@ -52,6 +52,33 @@ public class WeaponRunner {
         System.out.println(Weapon.isPeacefulMode());
         System.out.println(Weapon.togglePeacefulMode());
         System.out.println(Weapon.togglePeacefulMode());
+
+        Weapon[] weapons = new Weapon[3];
+        weapons[0] = w1;
+        weapons[1] = w2;
+        weapons[2] = w3;
+        for (Weapon weapon : weapons) {
+            System.out.println(weapon);
+        }
+
+        String[] words = new String[6];
+        words[0] = "Hello";
+        words[1] = "Universe";
+        words[2] = "I";
+        words[3] = "Am";
+        words[4] = "Your";
+        words[5] = "Creator";
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < words.length; i++) {
+            sb.append(words[i]);
+            if (i != words.length-1) {
+                sb.append(" ");
+            }
+        }
+
+        System.out.println(sb);
+
 
 
     }
